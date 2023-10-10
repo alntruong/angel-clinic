@@ -12,9 +12,11 @@ const center = {
 };
 
 const Map = () => {
+
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
  
   return (
-    <LoadScript googleMapsApiKey="AIzaSyA-Hrr7VLOYrd1NtxAIQf37M9MnsEiHR48">
+    <LoadScript googleMapsApiKey={googleMapsApiKey}>
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={15}>
         {/* Marker for your address */}
         <Marker position={center} />
